@@ -1,6 +1,8 @@
 <%@page import="java.time.LocalDateTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,14 +22,14 @@
 
 	<h1>
 		The time is :
-		<%=time%>
+	${ time }
 	</h1>
 	<h1>
 		The name is :
-		<%=name%></h1>
+		${name}</h1>
 	<h1>
 		The roll is :
-		<%=roll%></h1>
+		</h1>
 
 </body>
 </html>
