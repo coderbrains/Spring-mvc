@@ -11,8 +11,8 @@
 <body>
 <h1>Form submitted successfully</h1>
 
-<h1>name is ${ name } </h1>
-<h1>email is ${email }</h1>
-<h1>password is ${password }</h1>
+<h1>name is ${ user.name } </h1>
+<h1>email is ${user.email }</h1>
+<h1>password is ${user.password }</h1>
 </body>
 </html>
