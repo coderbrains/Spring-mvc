@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,22 +52,26 @@ public class TestController {
 	 * 
 	 */
 
-	@RequestMapping(path = "processform" , method = RequestMethod.POST)
-	public String home(@RequestParam("name")String name,
-			@RequestParam("email")String email,
-			@RequestParam("pass")String password,Model model
-			) {
+	/*
+	 * @RequestMapping(path = "processform" , method = RequestMethod.POST) public
+	 * String home(@RequestParam("name")String name,
+	 * 
+	 * @RequestParam("email")String email,
+	 * 
+	 * @RequestParam("pass")String password,Model model ) {
+	 * 
+	 * 
+	 * User user = new User(); user.setEmail(email); user.setPassword(password);
+	 * user.setName(name); model.addAttribute("user",user);
+	 * System.out.println(user); return "submit";
+	 * 
+	 * }
+	 */
+	
+	
+	@RequestMapping(path = "processform", method =  RequestMethod.POST)
+	public  String name(@ModelAttribute User user) {
 		
-		
-		User user = new User();
-		user.setEmail(email);
-		user.setPassword(password);
-		user.setName(name);
-		model.addAttribute("user",user);
-		System.out.println(user);
 		return "submit";
-	
 	}
-	
-	
 }
