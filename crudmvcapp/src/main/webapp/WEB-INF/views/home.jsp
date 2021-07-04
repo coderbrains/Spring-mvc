@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html lang="en">
 <head>
+
+<%@page isELIgnored="false"%>
+
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
@@ -18,43 +19,53 @@
 </head>
 <body>
 
-
-	<div class="container  mt-5">
-		<div class="row">
-
-			<div class="col-6 offset-md-3">
-
-				<div class="card">
-					<div class="card-header text-center">
-						<h1>Search Engine</h1>
-
-					</div>
-
-					<div class="card-body">
+	<div class="container">
+		<div class="card  mt-5">
 
 
-						<form action="search">
+			<div class="card-header text-center">
 
-							<div class="form-group">
+				<h1>All Products</h1>
+			</div>
 
-								<input name="searchbox" type="text" class="form-control"
-									placeholder="Enter Your query." />
+			<div class="card-body">
 
-							</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">name</th>
+							<th scope="col">Description</th>
+							<th scope="col">Price</th>
 
-							<div class="container text-center">
-								<button class="btn btn-primary" type="submit">Search</button>
-							</div>
-						</form>
+						</tr>
+					</thead>
+					<tbody>
 
+						<%
+							for (int i = 0; i < 2; i++) {
+						%>
 
-					</div>
-				</div>
+						<tr>
+							<th scope="row">${products.get(<%= i  %>).id }</th>
+							<td>${products.get(<%= i  %>).name }</td>
+							<td>${products.get(<%= i  %>).description }</td>
+							<td>${products.get(<%= i  %>).price }</td>
+						</tr>
 
+						<%
+							}
+						%>
+
+					</tbody>
+				</table>
 			</div>
 
 		</div>
+
 	</div>
+
+
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
